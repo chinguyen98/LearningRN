@@ -1,28 +1,17 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { Button, SafeAreaView, ScrollView, StatusBar, Text, View } from 'react-native';
+import HomeScene from './scenes/HomeScene';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <SafeAreaView className="bg-slate-100">
-      <StatusBar />
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <View className="bg-slate-100">
-          <Text className="text-lg text-red my-2 italic">Ecec sss</Text>
-          <Text>Tadaasdsadas</Text>
-          <Button title="ecec" />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen options={{ headerShown: false }} name="Home" component={HomeScene} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
