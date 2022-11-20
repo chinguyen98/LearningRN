@@ -1,13 +1,22 @@
 import React from 'react';
-import { Button, Text, SafeAreaView, Image, TextInput } from 'react-native';
-import styles from './homeScreenStyle';
+import {
+  Button,
+  Image,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
 import { SparklesIcon } from 'react-native-heroicons/solid';
+import styles from './homeScreenStyle';
 
 const HomeScene = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text className="text-red-500 my-3 italic">Ecec sss</Text>
       <Image
+        className="rounded"
         style={styles.tinyLogo}
         source={{
           uri: 'https://picsum.photos/200/300',
@@ -21,6 +30,95 @@ const HomeScene = () => {
         placeholder="tada"
         keyboardType="default"
       />
+      <TouchableOpacity>
+        <Text className="text-red-500 bg-pink-500 p-5">Hit me!</Text>
+      </TouchableOpacity>
+      <ScrollView horizontal>
+        <Image
+          className="rounded"
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://picsum.photos/200/300',
+          }}
+        />
+        <Image
+          className="rounded"
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://picsum.photos/200/300',
+          }}
+        />
+        <Image
+          className="rounded"
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://picsum.photos/200/300',
+          }}
+        />
+        <Image
+          className="rounded"
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://picsum.photos/200/300',
+          }}
+        />
+        <Image
+          className="rounded"
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://picsum.photos/200/300',
+          }}
+        />
+        <Image
+          className="rounded"
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://picsum.photos/200/300',
+          }}
+        />
+        <Image
+          className="rounded"
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://picsum.photos/200/300',
+          }}
+        />
+        <Image
+          className="rounded"
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://picsum.photos/200/300',
+          }}
+        />
+        <Image
+          className="rounded"
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://picsum.photos/200/300',
+          }}
+        />
+        <Image
+          className="rounded"
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://picsum.photos/200/300',
+          }}
+        />
+        <Image
+          className="rounded"
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://picsum.photos/200/300',
+          }}
+        />
+        <Image
+          className="rounded"
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://picsum.photos/200/300',
+          }}
+        />
+      </ScrollView>
     </SafeAreaView>
   );
 };
