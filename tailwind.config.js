@@ -3,7 +3,11 @@
 module.exports = {
   content: ['./App.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'regal-blue': '#FF0000',
+      },
+    },
   },
   plugins: [],
 };
