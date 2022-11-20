@@ -13,11 +13,11 @@ import { Button, SafeAreaView, ScrollView, StatusBar, Text, View } from 'react-n
 
 const App = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView className="bg-slate-100">
       <StatusBar />
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <View>
-          <Text>Ecessc</Text>
+        <View className="bg-slate-100">
+          <Text className="text-lg text-red my-2 italic">Ecec sss</Text>
           <Text>Tadaasdsadas</Text>
           <Button title="ecec" />
         </View>
