@@ -12,6 +12,8 @@ import { SparklesIcon } from 'react-native-heroicons/solid';
 import styles from './homeScreenStyle';
 
 const HomeScene = () => {
+  const changeToProductScreen = () => {};
+
   return (
     <SafeAreaView style={styles.container}>
       <Text className="text-red-500 my-3 italic">Ecec sss</Text>
@@ -30,7 +32,7 @@ const HomeScene = () => {
         placeholder="tada"
         keyboardType="default"
       />
-      <TouchableOpacity>
+      <TouchableOpacity onPress={changeToProductScreen}>
         <Text className="text-red-500 bg-pink-500 p-5">Hit me!</Text>
       </TouchableOpacity>
       <ScrollView horizontal>
