@@ -1,8 +1,12 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, Text } from 'react-native';
 
 const ProductScreen = () => {
-  return <SafeAreaView>Product Screen</SafeAreaView>;
+  return (
+    <SafeAreaView className="bg-black h-full">
+      <Text>Product Screen</Text>
+    </SafeAreaView>
+  );
 };
 
 export default ProductScreen;

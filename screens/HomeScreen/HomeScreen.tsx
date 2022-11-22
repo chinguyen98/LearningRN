@@ -10,9 +10,15 @@ import {
 } from 'react-native';
 import { SparklesIcon } from 'react-native-heroicons/solid';
 import styles from './homeScreenStyle';
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../App';
 
-const HomeScene = () => {
-  const changeToProductScreen = () => {};
+type HomeScreenProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
+
+const HomeScreen = ({ navigation }: HomeScreenProps) => {
+  const changeToProductScreen = () => {
+    navigation.navigate('Product');
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -125,4 +131,4 @@ const HomeScene = () => {
   );
 };
 
-export default HomeScene;
+export default HomeScreen;
