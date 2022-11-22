@@ -6,7 +6,7 @@ import ProductScreen from './screens/ProductScreen';
 
 export type RootStackParamList = {
   Home: undefined;
-  Product: undefined;
+  Product: { product_id: string };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();

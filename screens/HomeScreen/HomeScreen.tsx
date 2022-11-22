@@ -17,7 +17,7 @@ type HomeScreenProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 const HomeScreen = ({ navigation }: HomeScreenProps) => {
   const changeToProductScreen = () => {
-    navigation.navigate('Product');
+    navigation.navigate('Product', { product_id: 'ecec_id' });
   };
 
   return (
