@@ -10,16 +10,8 @@ import {
 } from 'react-native';
 import { SparklesIcon } from 'react-native-heroicons/solid';
 import styles from './homeScreenStyle';
-import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../App';
 
-type HomeScreenProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
-
-const HomeScreen = ({ navigation }: HomeScreenProps) => {
-  const changeToProductScreen = () => {
-    navigation.navigate('Product', { product_id: 'ecec_id' });
-  };
-
+const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text className="text-red-500 my-3 italic">Ecec sss</Text>
@@ -38,7 +30,7 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
         placeholder="tada"
         keyboardType="default"
       />
-      <TouchableOpacity onPress={changeToProductScreen}>
+      <TouchableOpacity>
         <Text className="text-red-500 bg-pink-500 p-5">Hit me!</Text>
       </TouchableOpacity>
       <ScrollView horizontal>

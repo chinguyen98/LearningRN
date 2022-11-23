@@ -1,23 +1,33 @@
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
+import { HomeIcon, BookOpenIcon } from 'react-native-heroicons/solid';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 
-export type RootStackParamList = {
-  Home: undefined;
-  Product: { product_id: string };
-};
-
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const RootStack = createBottomTabNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen options={{ headerShown: false }} name="Home" component={HomeScreen} />
-        <Stack.Screen options={{ headerShown: false }} name="Product" component={ProductScreen} />
-      </Stack.Navigator>
+      <RootStack.Navigator>
+        <RootStack.Screen
+          options={{
+            headerShown: false,
+            tabBarIcon: ({ color, size }) => <HomeIcon color={color} size={size} />,
+          }}
+          name="Home"
+          component={HomeScreen}
+        />
+        <RootStack.Screen
+          options={{
+            headerShown: false,
+            tabBarIcon: ({ color, size }) => <BookOpenIcon color={color} size={size} />,
+          }}
+          name="Product"
+          component={ProductScreen}
+        />
+      </RootStack.Navigator>
     </NavigationContainer>
   );
 };
