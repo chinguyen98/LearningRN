@@ -1,17 +1,10 @@
 import React from 'react';
-import { FlatList, SafeAreaView, Text, View } from 'react-native';
+import { FlatList, SafeAreaView, Text } from 'react-native';
 import useFetchAllPost from '../../hooks/services/useFetchAllPost';
-
-const Item = ({ title = '' }) => (
-  <View>
-    <Text>{title}</Text>
-  </View>
-);
+import ProductItem from './components/ProductItem';
 
 const ProductScreen = () => {
   const { isSuccess, data } = useFetchAllPost();
-
-  console.log({ data });
 
   return (
     <SafeAreaView className="bg-black h-full">
@@ -21,7 +14,7 @@ const ProductScreen = () => {
         <FlatList
           data={data}
           keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => <Item title={item.title} />}
+          renderItem={({ item }) => <ProductItem title={item.title} />}
         />
       )}
     </SafeAreaView>
