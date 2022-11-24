@@ -10,7 +10,7 @@ export type ProductDetailScreenProps = NativeStackScreenProps<
 
 const ProductDetailScreen = ({ route }: ProductDetailScreenProps) => {
   return (
-    <SafeAreaView>
+    <SafeAreaView className="bg-slate-900 text-red-600 p-2 h-full">
       <Text>{route.params.id}</Text>
     </SafeAreaView>
   );
