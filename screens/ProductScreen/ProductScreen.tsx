@@ -1,23 +1,19 @@
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { FlatList, SafeAreaView, Text } from 'react-native';
-import useFetchAllPost from '../../hooks/services/useFetchAllPost';
-import ProductItem from './components/ProductItem';
+import ListProductScreen from './screens/ListProductScreen';
+
+type ProductScreenParamList = {
+  ListProduct: undefined;
+  ProductDetail: { id: string };
+};
+
+const ProductScreenStack = createNativeStackNavigator<ProductScreenParamList>();
 
 const ProductScreen = () => {
-  const { isSuccess, data } = useFetchAllPost();
-
   return (
-    <SafeAreaView className="bg-black h-full">
-      {!isSuccess ? (
-        <Text>Loading.........</Text>
-      ) : (
-        <FlatList
-          data={data}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => <ProductItem title={item.title} />}
-        />
-      )}
-    </SafeAreaView>
+    <ProductScreenStack.Navigator>
+      <ProductScreenStack.Screen name="ListProduct" component={ListProductScreen} />
+    </ProductScreenStack.Navigator>
   );
 };
 
