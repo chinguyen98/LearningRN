@@ -1,13 +1,14 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import ListProductScreen from './screens/ListProductScreen';
+import ProductDetailScreen from './screens/ProductDetailScreen';
 
-type ProductScreenParamList = {
+export type ProductScreenStackParamList = {
   ListProduct: undefined;
   ProductDetail: { id: string };
 };
 
-const ProductScreenStack = createNativeStackNavigator<ProductScreenParamList>();
+const ProductScreenStack = createNativeStackNavigator<ProductScreenStackParamList>();
 
 const ProductScreen = () => {
   return (
@@ -16,6 +17,7 @@ const ProductScreen = () => {
       screenOptions={{ headerShown: false }}
     >
       <ProductScreenStack.Screen name="ListProduct" component={ListProductScreen} />
+      <ProductScreenStack.Screen name="ProductDetail" component={ProductDetailScreen} />
     </ProductScreenStack.Navigator>
   );
 };

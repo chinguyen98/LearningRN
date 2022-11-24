@@ -14,7 +14,7 @@ const ListProductScreen = () => {
         <FlatList
           data={data}
           keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => <ProductItem title={item.title} />}
+          renderItem={({ item }) => <ProductItem id={item.id} title={item.title} />}
         />
       )}
     </SafeAreaView>
