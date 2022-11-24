@@ -11,7 +11,10 @@ const ProductScreenStack = createNativeStackNavigator<ProductScreenParamList>();
 
 const ProductScreen = () => {
   return (
-    <ProductScreenStack.Navigator>
+    <ProductScreenStack.Navigator
+      initialRouteName="ListProduct"
+      screenOptions={{ headerShown: false }}
+    >
       <ProductScreenStack.Screen name="ListProduct" component={ListProductScreen} />
     </ProductScreenStack.Navigator>
   );
