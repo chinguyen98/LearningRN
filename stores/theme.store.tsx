@@ -1,5 +1,5 @@
 import create from 'zustand';
-import { Appearance } from 'react-native';
+import { Appearance, StyleSheet } from 'react-native';
 
 const colorScheme = Appearance.getColorScheme();
 const backgroundColor = colorScheme === 'dark' ? '#000000' : '#FFFFFF';
@@ -9,6 +9,14 @@ const useThemeStore = create(() => ({
   colorScheme,
   backgroundColor,
   textColor,
+  base: StyleSheet.create({
+    theme: {
+      backgroundColor,
+      color: textColor,
+      width: '100%',
+      height: '100%',
+    },
+  }),
 }));
 
 export default useThemeStore;

@@ -3,11 +3,11 @@ import { SafeAreaView, Text } from 'react-native';
 import useThemeStore from '../../stores/theme.store';
 
 const HomeScreen = () => {
-  const backgroundColor = useThemeStore((state) => state.backgroundColor);
+  const theme = useThemeStore((state) => state.base.theme);
 
   return (
-    <SafeAreaView style={{ backgroundColor }}>
-      <Text>{backgroundColor}</Text>
+    <SafeAreaView style={theme}>
+      <Text>Home</Text>
     </SafeAreaView>
   );
 };
