@@ -2,7 +2,12 @@ import React from 'react';
 import { TextInput, TextStyle } from 'react-native';
 import useThemeStore from '../../stores/theme.store';
 
-const BaseInput = () => {
+type BaseInputProps = {
+  type?: 'text' | 'password';
+  placeholder?: string;
+};
+
+const BaseInput = ({ type = 'text', placeholder }: BaseInputProps) => {
   const colorScheme = useThemeStore((state) => state.colorScheme);
 
   const style: TextStyle = {
@@ -12,7 +17,16 @@ const BaseInput = () => {
     paddingLeft: 15,
   };
 
-  return <TextInput className="my-1" style={style} selectTextOnFocus={true} blurOnSubmit={true} />;
+  return (
+    <TextInput
+      secureTextEntry={type === 'password'}
+      className="my-1"
+      style={style}
+      selectTextOnFocus={true}
+      blurOnSubmit={true}
+      placeholder={placeholder}
+    />
+  );
 };
 
 export default BaseInput;

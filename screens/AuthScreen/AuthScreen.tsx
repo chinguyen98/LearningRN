@@ -10,8 +10,8 @@ const AuthScreen = () => {
     <SafeAreaView style={theme}>
       <View>
         <Text className="text-center text-lg">LOGIN</Text>
-        <BaseInput />
-        <BaseInput />
+        <BaseInput placeholder="Input your username" />
+        <BaseInput placeholder="Input your password" type="password" />
       </View>
     </SafeAreaView>
   );

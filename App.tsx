@@ -1,5 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NativeBaseProvider } from 'native-base';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 import AuthScreen from './screens/AuthScreen';
@@ -19,27 +20,29 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <NavigationContainer>
-        <RootStack.Navigator>
-          {isLogged ? (
-            <RootStack.Screen
-              options={{
-                headerShown: false,
-              }}
-              name="Home"
-              component={HomeScreen}
-            />
-          ) : (
-            <RootStack.Screen
-              options={{
-                headerShown: false,
-              }}
-              name="Auth"
-              component={AuthScreen}
-            />
-          )}
-        </RootStack.Navigator>
-      </NavigationContainer>
+      <NativeBaseProvider>
+        <NavigationContainer>
+          <RootStack.Navigator>
+            {isLogged ? (
+              <RootStack.Screen
+                options={{
+                  headerShown: false,
+                }}
+                name="Home"
+                component={HomeScreen}
+              />
+            ) : (
+              <RootStack.Screen
+                options={{
+                  headerShown: false,
+                }}
+                name="Auth"
+                component={AuthScreen}
+              />
+            )}
+          </RootStack.Navigator>
+        </NavigationContainer>
+      </NativeBaseProvider>
     </QueryClientProvider>
   );
 };
