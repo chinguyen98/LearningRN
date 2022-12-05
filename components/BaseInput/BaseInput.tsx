@@ -5,9 +5,12 @@ import useThemeStore from '../../stores/theme.store';
 type BaseInputProps = {
   type?: 'text' | 'password';
   placeholder?: string;
+  value?: string;
+  onChange?: () => void;
+  name?: string;
 };
 
-const BaseInput = ({ type = 'text', placeholder }: BaseInputProps) => {
+const BaseInput = ({ type = 'text', placeholder, value, onChange = () => {} }: BaseInputProps) => {
   const colorScheme = useThemeStore((state) => state.colorScheme);
 
   const style: TextStyle = {
@@ -25,6 +28,8 @@ const BaseInput = ({ type = 'text', placeholder }: BaseInputProps) => {
       selectTextOnFocus={true}
       blurOnSubmit={true}
       placeholder={placeholder}
+      value={value}
+      onChangeText={onChange}
     />
   );
 };
