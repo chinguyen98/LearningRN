@@ -28,7 +28,7 @@ const AuthScreen = () => {
     },
   });
 
-  const onSubmit = ({ username, password }: AuthFormProps) => {
+  const onSubmit = async ({ username, password }: AuthFormProps) => {
     console.log({ username, password });
   };
 
