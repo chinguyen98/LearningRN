@@ -11,7 +11,11 @@ type AuthFormProps = {
 };
 
 const AuthScreen = () => {
-  const theme = useThemeStore((state) => state.base.theme);
+  const {
+    base: { theme },
+    textColor,
+  } = useThemeStore((state) => state);
+
   const style: ViewStyle = {
     ...theme,
     display: 'flex',
@@ -42,7 +46,9 @@ const AuthScreen = () => {
   return (
     <SafeAreaView style={style}>
       <View>
-        <Text className="text-center text-lg">LOGIN</Text>
+        <Text style={{ color: textColor }} className="text-center text-lg">
+          LOGIN
+        </Text>
         <View className="my-3 px-3">
           <Controller
             control={control}
