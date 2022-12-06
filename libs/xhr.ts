@@ -34,7 +34,11 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
   (response) => {
-    return response;
+    if (response.status === 200) {
+      return response.data;
+    }
+
+    return Promise.reject(response.data?.message ?? 'Error!');
   },
   (error) => {
     // if (!error.response) {

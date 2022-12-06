@@ -32,9 +32,11 @@ const AuthScreen = () => {
   const onSubmit = async () => {
     try {
       console.log('ececec');
-      const response = await loginApi({ username: 'kminchelle', password: '0lelplR' });
+      const response = await loginApi({ username: 'kminchelle', password: '0lelplRs' });
       console.log({ response });
-    } catch (err) {}
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
