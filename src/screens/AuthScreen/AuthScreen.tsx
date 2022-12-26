@@ -3,6 +3,7 @@ import { Controller, useForm } from 'react-hook-form';
 import { SafeAreaView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import BaseInput from '../../components/BaseInput';
 import useThemeStore from '../../stores/theme.store';
+import { CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN } from '@env';
 
 type AuthFormProps = {
   username: string;
@@ -34,7 +35,7 @@ const AuthScreen = () => {
 
   const onSubmit = async () => {
     try {
-      console.log('ececec');
+      console.log('ececec', CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN);
       // const response = await loginApi({ username: 'kminchelle', password: '0lelplRs' });
       // console.log({ response });
     } catch (err) {
