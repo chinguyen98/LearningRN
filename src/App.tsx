@@ -3,9 +3,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NativeBaseProvider } from 'native-base';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
-import AuthScreen from './screens/AuthScreen';
 import HomeScreen from './screens/HomeScreen';
 import useAuthStore from './stores/auth.store';
+import VerifyScreen from './screens/VerifyScreen';
 
 const queryClient = new QueryClient();
 
@@ -37,7 +37,7 @@ const App = () => {
                   headerShown: false,
                 }}
                 name="Auth"
-                component={AuthScreen}
+                component={VerifyScreen}
               />
             )}
           </RootStack.Navigator>

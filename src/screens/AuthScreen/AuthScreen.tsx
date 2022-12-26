@@ -36,8 +36,11 @@ const AuthScreen = () => {
   const onSubmit = async () => {
     try {
       console.log('ececec', CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN);
-      // const response = await loginApi({ username: 'kminchelle', password: '0lelplRs' });
-      // console.log({ response });
+      // const response = await generateAccessToken({
+      //   client_id: CLIENT_ID,
+      //   client_secret: CLIENT_SECRET,
+      //   refresh_token: REFRESH_TOKEN,
+      // });
     } catch (err) {
       console.error(err);
     }
