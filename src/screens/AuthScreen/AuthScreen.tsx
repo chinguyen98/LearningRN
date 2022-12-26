@@ -1,7 +1,6 @@
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { SafeAreaView, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
-import { loginApi } from '../../apis/auth.api';
 import BaseInput from '../../components/BaseInput';
 import useThemeStore from '../../stores/theme.store';
 
