@@ -1,5 +1,5 @@
 import axios from '../../libs/xhr';
-import { GenerateAccessTokenResponseType } from './auth.type';
+import { GenerateAccessTokenResponseType } from './authApi';
 
 export const generateAccessToken = async ({
   refresh_token,
